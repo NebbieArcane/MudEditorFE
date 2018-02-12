@@ -1,0 +1,11 @@
+<div class="col-lg-6">
+	<h2>Available zones</h2>
+	<ul class="heroes">
+		<li *ngFor="let zone of zoneobject" (click)="onSelect(zone)"
+			[class.selected]="zone === selectedZones"><span class="badge">{{zone.vnum}}</span>
+			{{zone.zoneName}}</li>
+	</ul>
+</div>
+<div class="col-lg-6">
+	<app-zone-detail [zoneobject]="selectedZones"></app-zone-detail>
+</div>

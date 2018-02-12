@@ -1,0 +1,34 @@
+<!-- 
+	<div *ngIf="selectedZones">
+		<h2>{{ selectedZones.zoneName | uppercase }} Details</h2>
+		<div>
+			<span>id: </span>{{selectedZones.vnum}}
+		</div>
+		<div>
+			<label>name: <input [(ngModel)]="selectedZones.vnum"
+				placeholder="name">
+			</label>
+		</div>
+	</div>
+ -->
+	<div *ngIf="zoneobject">
+		<ul *ngFor="let zone of zoneobject">
+			<li>vnum: {{zone.vnum}}</li>
+			<li>zoneName: {{zone.zoneName}}</li>
+			<li>topRoomNumber: {{zone.topRoomNumber}}</li>
+			<li>lifeSpan: {{zone.lifeSpan}}</li>
+			<li>resetMode: {{zone.resetMode}}</li>
+			<ul *ngFor="let command of zone.zoneCommands">
+				<li>command: {{command.command}}</li>
+				<li>ifFlag: {{command.ifFlag}}</li>
+				<li>relatedVnum: {{command.relatedVnum}}</li>
+				<li>maxExisting: {{command.maxExisting}}</li>
+				<li>roomVnum: {{command.roomVnum}}</li>
+				<li>objVnum1: {{command.objVnum1}}</li>
+				<li>objVnum2: {{command.objVnum2}}</li>
+				<li>equipmentPosition: {{command.equipmentPosition}}</li>
+				<li>exitNum: {{command.exitNum}}</li>
+				<li>state: {{command.state}}</li>
+			</ul>
+		</ul>
+	</div>
