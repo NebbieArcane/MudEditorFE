@@ -10,21 +10,24 @@ import {ZONEOBJECT} from '../data_modeling/zonemock';
   styleUrls: ['./zones.component.css']
 })
 export class ZonesComponent implements OnInit {
+
   zoneobject: ZoneObject[];
 
   selectedZones: ZoneObject;
 
   onSelect(zoneObject: ZoneObject): void {
     this.selectedZones = zoneObject;
+    console.log(this.selectedZones);
   }
+
   constructor(private zoneService: ZoneService) {}
 
   ngOnInit() {
-    this.getZone();
+    this.getZones();
   }
 
-  getZone(): void {
-    this.zoneService.getZone().subscribe(zoneobject => this.zoneobject = zoneobject);
+  getZones(): void {
+    this.zoneService.getZones().subscribe(zoneobject => this.zoneobject = zoneobject);
   }
 
 }

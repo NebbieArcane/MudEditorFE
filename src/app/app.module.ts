@@ -11,6 +11,8 @@ import {ObjectsComponent} from './objects/objects.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ZoneService} from './zone.service';
 import { ZoneDetailComponent } from './zone-detail/zone-detail.component';
+import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -21,13 +23,14 @@ import { ZoneDetailComponent } from './zone-detail/zone-detail.component';
     ShopsComponent,
     MobsComponent,
     ObjectsComponent,
-    ZoneDetailComponent
+    ZoneDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ZoneService],
+  providers: [ZoneService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

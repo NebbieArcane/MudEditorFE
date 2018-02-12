@@ -14,6 +14,11 @@ export class ZoneDetailComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    console.log('-----------------------------------------------');
+    console.log('-----------------------------------------------');
+    console.log(this.zoneobject);
+    console.log('-----------------------------------------------');
+    console.log('-----------------------------------------------');
   }
 
 }

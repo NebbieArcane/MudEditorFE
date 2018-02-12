@@ -44,3 +44,14 @@ export const ZONEOBJECT: ZoneObject[] = [
     zoneCommands: ZONECOMMAND2
   }
 ];
+
+export const SINGLEZONEOBJECT: ZoneObject[] = [
+  {
+    vnum: 30,
+    zoneName: 'Northern Midgaard Main City~',
+    topRoomNumber: 3099,
+    lifeSpan: 15,
+    resetMode: 2,
+    zoneCommands: ZONECOMMAND
+  }
+];
