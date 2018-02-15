@@ -6,5 +6,5 @@ export class ZoneObject {
   topRoomNumber: number;
   lifeSpan: number;
   resetMode: number;
-  zoneCommands: Array<ZoneCommands[]>;
+  //  zoneCommands: Array<ZoneCommands[]>;
 }

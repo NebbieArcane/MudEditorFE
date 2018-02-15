@@ -1,45 +1,18 @@
 <div *ngIf="zoneobject">
-	<div class="row col-lg-12">
-		<h2>{{ zoneobject.zoneName | uppercase }} Details</h2>
-	</div>
+<div #mylist>
+	<div id="idlista">
+		<div class="row col-lg-12">
+			<h2>{{ zoneobject.zoneName | uppercase }} Details</h2>
+		</div>
 
-	<div class="col-lg">vnum: {{zoneobject.vnum}}</div>
-	<div class="col-lg">zoneName: {{zoneobject.zoneName}}</div>
-	<div class="col-lg">topRoomNumber: {{zoneobject.topRoomNumber}}</div>
-	<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
-	<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
-
-	<div class="row col-lg-12">
-		<h2>COMMANDS</h2>
+		<div class="col-lg" id="vnum">vnum: {{zoneobject.vnum}}</div>
+		<div class="col-lg">zoneName: {{zoneobject.zoneName}}</div>
+		<div class="col-lg">topRoomNumber: {{zoneobject.topRoomNumber}}</div>
+		<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
+		<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
+		<button type="button" class="btn btn-light" (click)="createForm()">Edit
+			Zone</button>
 	</div>
-	<div class="row">
-		<div class="col-lg header">command</div>
-		<div class="col-lg header">ifFlag</div>
-		<div class="col-lg header">relatedVnum</div>
-		<div class="col-lg header">maxExisting</div>
-		<div class="col-lg header">roomVnum</div>
-		<div class="col-lg header">objVnum1</div>
-		<div class="col-lg header">objVnum2</div>
-		<div class="col-lg header">equipmentPosition</div>
-		<div class="col-lg header">exitNum</div>
-		<div class="col-lg header">state</div>
-	</div>
-	<ng-template ngFor let-command [ngForOf]="zoneobject.zoneCommands">
-	<ng-template ngFor let-c [ngForOf]="command">
-	<div class="row">
-		<div class="col-lg">{{c.command}}</div>
-		<div class="col-lg">{{c.ifFlag}}</div>
-		<div class="col-lg">{{c.relatedVnum}}</div>
-		<div class="col-lg">{{c.maxExisting}}</div>
-		<div class="col-lg">{{c.roomVnum}}</div>
-		<div class="col-lg">{{c.objVnum1}}</div>
-		<div class="col-lg">{{c.objVnum2}}</div>
-		<div class="col-lg">{{c.equipmentPosition}}</div>
-		<div class="col-lg">{{c.exitNum}}</div>
-		<div class="col-lg">{{c.state}}</div>
-	</div>
-
-	</ng-template> </ng-template>
-
 </div>
-
+<div #modform></div>
+</div>

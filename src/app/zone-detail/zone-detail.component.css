@@ -1,0 +1,8 @@
+.header, .cmd-row {
+	text-align: center;
+	border: 1px solid lightgray;
+}
+
+.header {
+	font-weight: bold;
+}

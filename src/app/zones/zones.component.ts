@@ -1,7 +1,7 @@
-import {ZoneObject} from '../data_modeling/zone_object';
 import {Component, OnInit} from '@angular/core';
-import {ZoneService} from '../zone.service';
 
+import {ZoneService} from '../zone.service';
+import {ZoneObject} from '../data_modeling/zone_object';
 import {ZONEOBJECT} from '../data_modeling/zonemock';
 
 @Component({
@@ -17,7 +17,6 @@ export class ZonesComponent implements OnInit {
 
   onSelect(zoneObject: ZoneObject): void {
     this.selectedZones = zoneObject;
-    console.log(this.selectedZones);
   }
 
   constructor(private zoneService: ZoneService) {}
