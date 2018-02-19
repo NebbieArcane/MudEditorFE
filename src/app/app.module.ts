@@ -17,6 +17,7 @@ import {MessageService} from './message.service';
 import {MessagesComponent} from './messages/messages.component';
 import {BootstrapModalModule} from 'ng2-bootstrap-modal';
 import { ZoneFormComponent } from './zone-form/zone-form.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -31,6 +32,7 @@ import { ZoneFormComponent } from './zone-form/zone-form.component';
     ZoneDetailComponent,
     MessagesComponent,
     ZoneFormComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
