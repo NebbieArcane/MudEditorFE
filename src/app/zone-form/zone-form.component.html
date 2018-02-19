@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <form [formGroup]="zoneForm" novalidate="">
+      <div class="form-group">
+        <label for="vNum">Virtual Number</label>
+        <!-- <input type="text" class="form-control" id="vNum" required [(ngModel)]="model.vnum" name="vNum"> -->
+        <input type="text" class="form-control" formControlName="vNum">
+      </div>
+
+      <div class="form-group">
+        <label for="zoneName">Zone Name</label>
+        <!-- <input type="text" class="form-control" id="topRoomNumber" required="" [(ngModel)]="model.zoneName" name="zoneName"> -->
+        <input type="text" class="form-control" formControlName="zoneName">
+      </div>
+
+      <div class="form-group">
+        <label for="topRoomNumber">Top Room Number</label>
+        <!-- <input type="text" class="form-control" id="topRoomNumber" required="" [(ngModel)]="model.zoneName" name="zoneName"> -->
+        <input type="text" class="form-control" formControlName="topRoomNumber">
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for="lifeSpan">Life Span</label>
+        
+        <input type="text" class="form-control" formControlName="lifeSpan">
+      </div>
+
+      <div class="form-group">
+        <label for="resetMode">Reset Mode</label>
+        <select id="resetMode" formControlName="resetMode">
+        	<option value="">--</option>
+        	<option *ngFor="let rm of resetMode" [value]="rm">{{rm}}</option>
+        </select>
+      </div>
+
+     <!--  <div style="margin-bottom: 1em">
+    <button type="submit"
+            [disabled]="heroForm.pristine" class="btn btn-success">Save</button> &nbsp;
+    <button type="reset" (click)="revert()"
+            [disabled]="heroForm.pristine" class="btn btn-danger">Revert</button>
+  </div> -->
+
+    </form>
+</div>
+

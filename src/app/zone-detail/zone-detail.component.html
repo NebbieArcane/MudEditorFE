@@ -1,18 +1,20 @@
 <div *ngIf="zoneobject">
-<div #mylist>
-	<div id="idlista">
-		<div class="row col-lg-12">
-			<h2>{{ zoneobject.zoneName | uppercase }} Details</h2>
-		</div>
+	<div *ngIf="showList">
+		<div id="idlista">
+			<div class="row col-lg-12">
+				<h2>{{ zoneobject.zoneName | uppercase }} Details</h2>
+			</div>
+			<div class="col-lg" id="vnum">vnum: {{zoneobject.vnum}}</div>
+			<div class="col-lg">zoneName: {{zoneobject.zoneName}}</div>
+			<div class="col-lg">topRoomNumber: {{zoneobject.topRoomNumber}}</div>
+			<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
+			<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
+			<button type="button" class="btn btn-light" (click)="onSelect(zoneobject)">EditZone</button>
 
-		<div class="col-lg" id="vnum">vnum: {{zoneobject.vnum}}</div>
-		<div class="col-lg">zoneName: {{zoneobject.zoneName}}</div>
-		<div class="col-lg">topRoomNumber: {{zoneobject.topRoomNumber}}</div>
-		<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
-		<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
-		<button type="button" class="btn btn-light" (click)="createForm()">Edit
-			Zone</button>
+
+		</div>
 	</div>
 </div>
-<div #modform></div>
+<div *ngIf="zoneObject">
+	<app-zone-form [zoneObject]="zoneObject"></app-zone-form>
 </div>

@@ -1,5 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+
 
 
 import {AppComponent} from './app.component';
@@ -10,9 +12,12 @@ import {MobsComponent} from './mobs/mobs.component';
 import {ObjectsComponent} from './objects/objects.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ZoneService} from './zone.service';
-import { ZoneDetailComponent } from './zone-detail/zone-detail.component';
-import { MessageService } from './message.service';
-import { MessagesComponent } from './messages/messages.component';
+import {ZoneDetailComponent} from './zone-detail/zone-detail.component';
+import {MessageService} from './message.service';
+import {MessagesComponent} from './messages/messages.component';
+import {BootstrapModalModule} from 'ng2-bootstrap-modal';
+import { ZoneFormComponent } from './zone-form/zone-form.component';
+
 
 
 @NgModule({
@@ -24,11 +29,15 @@ import { MessagesComponent } from './messages/messages.component';
     MobsComponent,
     ObjectsComponent,
     ZoneDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    ZoneFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BootstrapModalModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ZoneService, MessageService],
   bootstrap: [AppComponent]

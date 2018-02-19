@@ -26,7 +26,7 @@ export class ZoneService {
 
   getCommands(vnum: number): Observable<ZoneCommands[]> {
     /**
-     * Forzarura per il mock: leggo il vnum e torno a forza i due elementi.
+     * Forzaura per il mock: leggo il vnum e torno a forza i due elementi.
      * Nella versione finale dovrà fare una chiamata al ws su base vnum ed avere i dati corretti.
      */
     if (30 === vnum) {
