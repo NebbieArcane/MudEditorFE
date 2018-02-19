@@ -1,4 +1,5 @@
 import { Component, SimpleChanges, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { ZoneObject } from '../data_modeling/zone_object';
 
@@ -12,17 +13,21 @@ import { ZoneObject } from '../data_modeling/zone_object';
 export class ZoneDetailComponent implements OnInit {
 
   public showList = true;
+  public newZone = false;
 
   zoneObject: ZoneObject;
 
   @Input() zoneobject: ZoneObject;
 
-  constructor() {
-    
+  constructor(private route: ActivatedRoute) {
+    let action = route.snapshot.paramMap.get('id') 
+    if(action!==null && action === 'new') {
+      this.newZone=true;
+    }
   }
 
   // createForm(): void {
-    
+
   //   // remove list element
 
   //   this.showForm = true;
@@ -41,9 +46,9 @@ export class ZoneDetailComponent implements OnInit {
 
   ngOnChanges(simpleChanges: SimpleChanges[]) {
 
-    if(simpleChanges['zoneobject']) {
-      this.showList=true;
-      this.zoneObject=null;
+    if (simpleChanges['zoneobject']) {
+      this.showList = true;
+      this.zoneObject = null;
     }
   }
 

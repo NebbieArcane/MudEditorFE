@@ -36,11 +36,11 @@ export class ZoneFormComponent implements OnInit, OnChanges {
 	createForm() {
 		if (this.zoneObject) {
 			this.zoneForm = this.fb.group({
-				vNum: this.zoneObject.vnum,
-				zoneName: this.zoneObject.zoneName,
-				topRoomNumber: this.zoneObject.topRoomNumber,
-				lifeSpan: this.zoneObject.lifeSpan,
-				resetMode: this.zoneObject.resetMode
+				vNum: this.zoneObject.vnum || null,
+				zoneName: this.zoneObject.zoneName || '',
+				topRoomNumber: this.zoneObject.topRoomNumber || null,
+				lifeSpan: this.zoneObject.lifeSpan || null,
+				resetMode: this.zoneObject.resetMode || ''
 			});
 		} else {
 			this.zoneForm = this.fb.group({

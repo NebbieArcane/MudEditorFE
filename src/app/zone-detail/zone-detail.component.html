@@ -1,3 +1,4 @@
+<!-- zone description -->
 <div *ngIf="zoneobject">
 	<div *ngIf="showList">
 		<div id="idlista">
@@ -10,11 +11,15 @@
 			<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
 			<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
 			<button type="button" class="btn btn-light" (click)="onSelect(zoneobject)">EditZone</button>
-
-
 		</div>
 	</div>
 </div>
+
+<!-- edit form -->
 <div *ngIf="zoneObject">
 	<app-zone-form [zoneObject]="zoneObject"></app-zone-form>
+</div>
+
+<div *ngIf="newZone">
+	<app-zone-form></app-zone-form>
 </div>
