@@ -1,5 +1,5 @@
-import {ZoneCommand} from './zone_commands';
-import {ZoneCommands} from 'app/data_modeling/zone_commands';
+import {ZoneCommand} from './zone-commands';
+import {ZoneCommands} from './zone-commands';
 
 export const ZONECOMMAND1: ZoneCommand[] = [{
   cmdId: 1,

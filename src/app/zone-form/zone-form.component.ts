@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 
-import { ZoneObject } from '../data_modeling/zone_object';
+import { ZoneObject } from '../data-modeling/zone-object';
 
 @Component({
 	selector: 'app-zone-form',

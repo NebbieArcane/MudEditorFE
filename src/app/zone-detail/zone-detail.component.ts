@@ -1,7 +1,7 @@
 import { Component, SimpleChanges, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ZoneObject } from '../data_modeling/zone_object';
+import { ZoneObject } from '../data-modeling/zone-object';
 
 
 @Component({
@@ -25,19 +25,6 @@ export class ZoneDetailComponent implements OnInit {
       this.newZone=true;
     }
   }
-
-  // createForm(): void {
-
-  //   // remove list element
-
-  //   this.showForm = true;
-
-  //   if (this.zoneobject !== undefined) {
-
-  //   }
-
-
-  // }
 
   onSelect(zoneObject: ZoneObject): void {
     this.zoneObject = zoneObject;

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 import {ZoneService} from '../zone.service';
-import {ZoneObject} from '../data_modeling/zone_object';
-import {ZONEOBJECT} from '../data_modeling/zonemock';
+import {ZoneObject} from '../data-modeling/zone-object';
+import {ZONEOBJECT} from '../data-modeling/zonemock';
 
 @Component({
   selector: 'app-zones',
