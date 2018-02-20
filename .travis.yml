@@ -9,11 +9,3 @@ install:
 - npm install @angular/cli
 - npm install
 script: ng build
-deploy:
-  provider: releases
-  api_key:
-    secure: c65HcVNdH8aXVe5jQf0k40ly1nHWbMA+P3R/buZn9K6jF3jGS0aMAhu56SPumTVIWEk0k61zUG/wmbs4sVTpBOuwpicqQaYjpOvNhE95CYCEIzgpFEbVDpkg37R/ES4SmH9CTU7z2hBUTQWXHROjDEg8oBphlX3QPEbMSpdYkiIjjyl/pkwvWfRkTqz0B4NsY2KAeXxKg4o4SVDazxy2fixgrQhU4ToNVaIaTLJMqq1QnWU49D43IJWG0u39ZhYYci22zkUgZRB11IfW6VR7COzDGELDHmVUL9Sj5q808OpEmx+7b5GzXTauVt9iho4QBNWrD4TjdTkJaamH0w3CgShpeyoY7qTswMVXrUwhhKs6kceQOeHUjXavV0PuGXDG/aH00Ym3pLuZxpo8jqfqg5P7sqoG3PESPheBcqzaiFt9jZ8OjjtATWCyNpBuAGRRCCX9lkIdNIPQ7hXcKJy6dGkJQAXSBil7Tb7HftnDEv4PE0RU2sgNwwwIgVGqPxkEfKpjxpL3wbK51uHW2WM9xaDR5R+GJ6RuGRHjzgzkLNokuQyzgDuhUE/5tCpQ6kX3wo4LNJT2u8/6zFNM0bVVkz4pLgahJo2SCclTdVVZBwLQyo2yM0HiHE0NVLbxiElSn9S8Krxu+bK3CT+V/QiEACJGXW80T2XZfuLCyIm4oy4=
-  file: dist
-  on:
-    tags: all
-    repo: NebbieArcane/MudEditorFE
