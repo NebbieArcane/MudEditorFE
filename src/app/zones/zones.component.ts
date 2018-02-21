@@ -1,8 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 
 import {ZoneService} from '../zone.service';
-import {ZoneObject} from '../data-modeling/zone-object';
-import {ZONEOBJECT} from '../data-modeling/zonemock';
+import {ZoneRestClientService} from '../zone-rest-client.service';
+/*
+import {ZoneObject} from '../data-modeling/zones/zone-object';
+import {ZONEOBJECT} from '../data-modeling/zones/zonemock';
+*/
+import {ZoneApiObject} from '../data-modeling/zones/zone-api-object';
+
+
 
 @Component({
   selector: 'app-zones',
@@ -11,15 +17,19 @@ import {ZONEOBJECT} from '../data-modeling/zonemock';
 })
 export class ZonesComponent implements OnInit {
 
-  zoneobject: ZoneObject[];
+  //zoneobject: ZoneObject[];
 
+  zoneobject: ZoneApiObject[];
+
+  /*
   selectedZones: ZoneObject;
 
   onSelect(zoneObject: ZoneObject): void {
     this.selectedZones = zoneObject;
   }
+  */
 
-  constructor(private zoneService: ZoneService) {}
+  constructor(private zoneService: ZoneRestClientService) {}
 
   ngOnInit() {
     this.getZones();

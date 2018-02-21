@@ -3,11 +3,11 @@ import {Observable} from 'rxjs/Observable';
 import {of} from 'rxjs/observable/of';
 import {MessageService} from './message.service';
 
-import {ZoneObject} from './data-modeling/zone-object';
-import {ZoneCommands} from './data-modeling/zone-commands';
-import {ZONEOBJECT} from './data-modeling/zonemock';
-import {ZONECOMMANDS30} from './data-modeling/zone-commmands-mock';
-import {ZONECOMMANDS31} from './data-modeling/zone-commmands-mock';
+import {ZoneObject} from './data-modeling/zones/zone-object';
+import {ZoneCommands} from './data-modeling/zones/zone-commands';
+import {ZONEOBJECT} from './data-modeling/zones/zonemock';
+import {ZONECOMMANDS30} from './data-modeling/zones/zone-commmands-mock';
+import {ZONECOMMANDS31} from './data-modeling/zones/zone-commmands-mock';
 
 @Injectable()
 export class ZoneService {

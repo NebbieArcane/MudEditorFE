@@ -4,8 +4,8 @@
 			<h2>Available zones</h2>
 			<ul class="heroes">
 				<li *ngFor="let zone of zoneobject" (click)="onSelect(zone)"
-					[class.selected]="zone === selectedZones"><span class="badge">{{zone.vnum}}</span>
-					{{zone.zoneName}}</li>
+					[class.selected]="zone === selectedZones">
+					{{zone.name}}</li>
 			</ul>
 		</div>
 		<div class="col-lg-8" #mylist>
