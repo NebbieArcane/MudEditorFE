@@ -1,8 +1,9 @@
 import { Component, SimpleChanges, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ZoneObject } from '../data-modeling/zones/zone-object';
+// import { ZoneObject } from '../data-modeling/zones/zone-object';
 
+import { ZoneObject } from '../data-modeling/zones-api/zone-object';
 
 @Component({
   selector: 'app-zone-detail',
@@ -18,6 +19,7 @@ export class ZoneDetailComponent implements OnInit {
   zoneObject: ZoneObject;
 
   @Input() zoneobject: ZoneObject;
+  @Input() zone: ZoneObject;
 
   constructor(private route: ActivatedRoute) {
     let action = route.snapshot.paramMap.get('id')
@@ -41,7 +43,7 @@ export class ZoneDetailComponent implements OnInit {
 
   ngOnInit() {
     console.log('**********************************************');
-    console.log(JSON.stringify(this.zoneobject));
+    console.log(JSON.stringify(this.zone));
     console.log('**********************************************');
   }
 

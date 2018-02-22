@@ -6,7 +6,8 @@ import {ZoneRestClientService} from '../zone-rest-client.service';
 import {ZoneObject} from '../data-modeling/zones/zone-object';
 import {ZONEOBJECT} from '../data-modeling/zones/zonemock';
 */
-import {ZoneApiObject} from '../data-modeling/zones/zone-api-object';
+import {ZonesObject} from '../data-modeling/zones-api/zones-object';
+import {ZoneObject} from '../data-modeling/zones-api/zone-object';
 
 
 
@@ -19,15 +20,21 @@ export class ZonesComponent implements OnInit {
 
   //zoneobject: ZoneObject[];
 
-  zoneobject: ZoneApiObject[];
+  zoneobject: ZonesObject[];
 
-  /*
-  selectedZones: ZoneObject;
+  // selectedZones: ZonesObject;
+  // selectedZones = new ZonesObject();
 
-  onSelect(zoneObject: ZoneObject): void {
-    this.selectedZones = zoneObject;
+  zone: ZoneObject;
+
+
+  path: string;
+
+  onSelect(zoneObject: ZonesObject): void {
+    this.path = zoneObject.path;
+    this.getZone(this.path);
   }
-  */
+
 
   constructor(private zoneService: ZoneRestClientService) {}
 
@@ -37,6 +44,10 @@ export class ZonesComponent implements OnInit {
 
   getZones(): void {
     this.zoneService.getZones().subscribe(zoneobject => this.zoneobject = zoneobject);
+  }
+
+  getZone(path: string): void {
+    this.zoneService.getZone(path).subscribe(zone => this.zone = zone);
   }
 
 }

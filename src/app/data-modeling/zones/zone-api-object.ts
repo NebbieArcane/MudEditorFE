@@ -1,5 +1,5 @@
 // {"start":0,"end":10,"path":"scratch_zone_for_static","name":"Scratch Zone For Static Game\n"}
-export class ZoneApiObject {
+export class ZonesApiObject {
 
 	private start: number;
 	private end: number;

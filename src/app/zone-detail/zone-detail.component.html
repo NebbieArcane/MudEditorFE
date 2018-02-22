@@ -2,7 +2,8 @@
 <div *ngIf="zoneobject">
 	<div *ngIf="showList">
 		<div id="idlista">
-			<div class="row col-lg-12">
+			{{zone.vnum}}
+			<!-- <div class="row col-lg-12">
 				<h2>{{ zoneobject.zoneName | uppercase }} Details</h2>
 			</div>
 			<div class="col-lg" id="vnum">vnum: {{zoneobject.vnum}}</div>
@@ -10,7 +11,7 @@
 			<div class="col-lg">topRoomNumber: {{zoneobject.topRoomNumber}}</div>
 			<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
 			<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
-			<button type="button" class="btn btn-light" (click)="onSelect(zoneobject)">EditZone</button>
+			<button type="button" class="btn btn-light" (click)="onSelect(zoneobject)">EditZone</button> -->
 		</div>
 	</div>
 </div>
