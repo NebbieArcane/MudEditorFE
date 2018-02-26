@@ -18,15 +18,9 @@ import {ZoneObject} from '../data-modeling/zones-api/zone-object';
 })
 export class ZonesComponent implements OnInit {
 
-  //zoneobject: ZoneObject[];
-
   zoneobject: ZonesObject[];
 
-  // selectedZones: ZonesObject;
-  // selectedZones = new ZonesObject();
-
   zone: ZoneObject;
-
 
   path: string;
 

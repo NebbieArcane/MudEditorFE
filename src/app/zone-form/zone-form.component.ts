@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 
-import { ZoneObject } from '../data-modeling/zones/zone-object';
+import { ZoneObject } from '../data-modeling/zones-api/zone-object';
 
 @Component({
 	selector: 'app-zone-form',
@@ -14,11 +14,9 @@ export class ZoneFormComponent implements OnInit, OnChanges {
 
 	public title = 'ModZone';
 
-	resetMode = [0, 1, 2];
+	resetMode = ['Never', 'IfEmpty', 'Always'];	
 
 	@Input() zoneObject: ZoneObject;
-
-	model = new ZoneObject(1, 'ciccio', 2, 2, 1);
 
 	zoneForm: FormGroup;
 
@@ -35,12 +33,13 @@ export class ZoneFormComponent implements OnInit, OnChanges {
 
 	createForm() {
 		if (this.zoneObject) {
+			console.log(JSON.stringify(ZoneObject));
 			this.zoneForm = this.fb.group({
-				vNum: this.zoneObject.vnum || null,
-				zoneName: this.zoneObject.zoneName || '',
-				topRoomNumber: this.zoneObject.topRoomNumber || null,
-				lifeSpan: this.zoneObject.lifeSpan || null,
-				resetMode: this.zoneObject.resetMode || ''
+				vNum: this.zoneObject[0].vnum,
+				zoneName: this.zoneObject[0].name,
+				topRoomNumber: this.zoneObject[0].end,
+				lifeSpan: this.zoneObject[0].lifespan,
+				resetMode: this.zoneObject[0].resetmode
 			});
 		} else {
 			this.zoneForm = this.fb.group({
@@ -56,8 +55,8 @@ export class ZoneFormComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes['zoneobject']) {
-			this.model = this.zoneObject;
-			console.log(JSON.stringify(this.model));
+			// this.model = this.zoneObject;
+			// console.log(JSON.stringify(this.model));
 		}
 	}
 

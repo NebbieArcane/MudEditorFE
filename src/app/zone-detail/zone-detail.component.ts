@@ -18,7 +18,7 @@ export class ZoneDetailComponent implements OnInit {
 
   zoneObject: ZoneObject;
 
-  @Input() zoneobject: ZoneObject;
+  // @Input() zoneobject: ZoneObject;
   @Input() zone: ZoneObject;
 
   constructor(private route: ActivatedRoute) {
@@ -35,16 +35,12 @@ export class ZoneDetailComponent implements OnInit {
 
   ngOnChanges(simpleChanges: SimpleChanges[]) {
 
-    if (simpleChanges['zoneobject']) {
+    if (simpleChanges['zone']) {
       this.showList = true;
       this.zoneObject = null;
     }
   }
 
-  ngOnInit() {
-    console.log('**********************************************');
-    console.log(JSON.stringify(this.zone));
-    console.log('**********************************************');
-  }
+  ngOnInit() { }
 
 }

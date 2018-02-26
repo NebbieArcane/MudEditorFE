@@ -19,6 +19,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { ZoneFormComponent } from './zone-form/zone-form.component';
 import { HomeComponent } from './home/home.component';
 import { ZoneRestClientService } from './zone-rest-client.service';
+import { ZoneCommandFormComponent } from './zone-command-form/zone-command-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ZoneRestClientService } from './zone-rest-client.service';
     MessagesComponent,
     ZoneFormComponent,
     HomeComponent,
+    ZoneCommandFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,163 @@
 <!-- zone description -->
-<div *ngIf="zoneobject">
+<div *ngIf="zone">
 	<div *ngIf="showList">
 		<div id="idlista">
-			{{zone.vnum}}
-			<!-- <div class="row col-lg-12">
-				<h2>{{ zoneobject.zoneName | uppercase }} Details</h2>
+			<div class="row col-lg-12">
+				<h2>{{ zone[0].name | uppercase }} Details</h2>
 			</div>
-			<div class="col-lg" id="vnum">vnum: {{zoneobject.vnum}}</div>
-			<div class="col-lg">zoneName: {{zoneobject.zoneName}}</div>
-			<div class="col-lg">topRoomNumber: {{zoneobject.topRoomNumber}}</div>
-			<div class="col-lg">lifeSpan: {{zoneobject.lifeSpan}}</div>
-			<div class="col-lg">resetMode: {{zoneobject.resetMode}}</div>
-			<button type="button" class="btn btn-light" (click)="onSelect(zoneobject)">EditZone</button> -->
+			<div class="col-lg" id="vnum">vnum: {{zone[0].vnum}}</div>
+			<div class="col-lg">zoneName: {{zone[0].name}}</div>
+			<div class="col-lg">topRoomNumber: {{zone[0].end}}</div>
+			<div class="col-lg">lifeSpan: {{zone[0].lifespan}}</div>
+			<div class="col-lg">resetMode: {{zone[0].resetmode}}</div>
+			<button type="button" class="btn btn-light" (click)="onSelect(zone)">EditZone</button>
+		</div>
+		<div *ngFor="let command of zone[0].actions" [ngSwitch]="command.code" class="col-lg-12">
+			<table class="table table-striped" *ngSwitchCase="'M'">
+				<thead>
+					<tr>
+						<th scope="col">Command</th>
+						<th scope="col">if-flag</th>
+						<th scope="col">V-Num</th>
+						<th scope="col">cap</th>
+						<th scope="col">room</th>
+						<th scope="col">reserved</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ command.code }}</th>
+						<td>{{ command.ifFlag }}</td>
+						<td>{{ command.vnum }}</td>
+						<td>{{ command.cap }}</td>
+						<td>{{ command.room }}</td>
+						<td>{{ command.reserved }}</td>
+						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
+						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped" *ngSwitchCase="'E'">
+				<thead>
+					<tr>
+						<th scope="col">Command</th>
+						<th scope="col">if-flag</th>
+						<th scope="col">V-Num</th>
+						<th scope="col">slot</th>
+						<th scope="col">cap</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ command.code }}</th>
+						<td>{{ command.ifFlag }}</td>
+						<td>{{ command.vnum }}</td>
+						<td>{{ command.slotDesc }}</td>
+						<td>{{ command.cap }}</td>
+						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
+						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped" *ngSwitchCase="'G'">
+				<thead>
+					<tr>
+						<th scope="col">Command</th>
+						<th scope="col">if-flag</th>
+						<th scope="col">V-Num</th>
+						<th scope="col">cap</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ command.code }}</th>
+						<td>{{ command.ifFlag }}</td>
+						<td>{{ command.vnum }}</td>
+						<td>{{ command.cap }}</td>
+						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
+						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped" *ngSwitchCase="'O'">
+				<thead>
+					<tr>
+						<th scope="col">Command</th>
+						<th scope="col">if-flag</th>
+						<th scope="col">V-Num</th>
+						<th scope="col">cap</th>
+						<th scope="col">room</th>
+						<th scope="col">reserved</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ command.code }}</th>
+						<td>{{ command.ifFlag }}</td>
+						<td>{{ command.vnum }}</td>
+						<td>{{ command.cap }}</td>
+						<td>{{ command.room }}</td>
+						<td>{{ command.reserved }}</td>
+						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
+						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped" *ngSwitchCase="'R'">
+				<thead>
+					<tr>
+						<th scope="col">Command</th>
+						<th scope="col">if-flag</th>
+						<th scope="col">room</th>
+						<th scope="col">V-Num</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ command.code }}</th>
+						<td>{{ command.ifFlag }}</td>
+						<td>{{ command.room }}</td>
+						<td>{{ command.vnum }}</td>
+						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
+						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped" *ngSwitchCase="'D'">
+				<thead>
+					<tr>
+						<th scope="col">Command</th>
+						<th scope="col">if-flag</th>
+						<th scope="col">room</th>
+						<th scope="col">Exit</th>
+						<th scope="col">state</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ command.code }}</th>
+						<td>{{ command.ifFlag }}</td>
+						<td>{{ command.room }}</td>
+						<td>{{ command.vnum }}</td>
+						<td>{{ command.exit }}</td>
+						<td>{{ command.state }}</td>
+						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
+						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
