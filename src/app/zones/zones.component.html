@@ -1,26 +1,37 @@
 <div class="col-lg-12">
-	<div class="row">
-		<div class="col-lg-2">
-			<h2>Available zones</h2>
-			<ul class="heroes">
-				<li *ngFor="let zone of zoneobject" (click)="onSelect(zone)"
-					[class.selected]="zone === selectedZones">
-					{{zone.name}}</li>
-			</ul>
-		</div>
-		<div class="col-lg-2">
-			<h2>Working zones</h2>
-			<ul class="heroes">
-				<li (click)="addDbZone()" [class.selected]="selectedZones">ADD ZONE</li>
-				<li *ngFor="let zoneDb of dbzonesobject" (click)="onSelect(zoneDb)"
-					[class.selected]="zoneDb === selectedZones">
-					{{zoneDb.name}}</li>
-			</ul>
-		</div>
-		<div class="col-lg-8" #mylist>
-			<app-zone-detail [zone]="zone"></app-zone-detail>
+  <div class="row">
+    <div class="col-lg-2">
+      <h2>Available zones</h2>
+      <ul class="heroes">
+        <li *ngFor="let zone of zoneobject" (click)="onSelect(zone)"
+            [class.selected]="zone === selectedZones">
+          {{zone.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-2">
+      <h2>Working zones</h2>
+      <ul class="heroes">
+        <li (click)="addDbZone(dbZoneFormObject)" [class.selected]="selectedZones">ADD ZONE</li>
+        <li *ngFor="let zoneDb of dbzonesobject" (click)="onSelect(zoneDb)"
+            [class.selected]="zoneDb === selectedZones">
+          {{zoneDb.name}}
+        </li>
+      </ul>
+    </div>
 
+
+    <div class="col-lg-8" #mylist>
+      <div *ngIf="newZone" class="col-lg">
+        <app-db-zone-list-form></app-db-zone-list-form>
+      </div>
+      <app-zone-detail [zone]="zone"></app-zone-detail>
       <app-zone-detail [zone]="zoneDb"></app-zone-detail>
-		</div>
-	</div>
+
+    </div>
+
+
+  </div>
+
+
 </div>

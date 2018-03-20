@@ -15,19 +15,16 @@ import {ZoneListObject} from "../data-modeling/zone-db/zone-list-object";
 export class ZonesComponent implements OnInit {
 
   zoneobject: ZonesObject[];
-  dbzoneobject: ZonesObject[];
+  dbzoneobject: ZoneListObject[];
+
+  dbZoneFormObject: ZoneListObject;
 
   zone: ZoneObject;
   zoneDb: ZoneListObject;
 
   path: string;
 
-  onSelect(zoneObject: ZonesObject): void {
-    this.path = zoneObject.path;
-    this.getZone(this.path);
-  }
-
-
+  newZone = false;
 
   constructor(private zoneService: ZoneRestClientService,
               private dbZoneService: DbZoneRestServiceService) {
@@ -37,6 +34,17 @@ export class ZonesComponent implements OnInit {
     this.getZones();
     this.getDbZones();
   }
+
+
+  onSelect(zoneObject: ZonesObject): void {
+    this.path = zoneObject.path;
+    this.getZone(this.path);
+  }
+
+  addDbZone(): void {
+    this.newZone = true;
+  }
+
 
   getZones(): void {
     this.zoneService.getZones().subscribe(zoneobject => this.zoneobject = zoneobject);

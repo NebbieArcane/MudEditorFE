@@ -5,9 +5,13 @@ export class ZoneListObject {
 	private _end: number;
 	private _path: string;
 	private _name: string;
-	private _status: any;
+	private _status: string;
 
 	constructor() { }
+
+	get id(): number {
+	  return this._id;
+  }
 
 	set start(start: number) {
 		this._start = start;
@@ -30,7 +34,7 @@ export class ZoneListObject {
 	}
 
 	get path(): string {
-		return this.path;
+		return this._path;
 	}
 
 	set name(name: string) {
@@ -43,7 +47,7 @@ export class ZoneListObject {
 
 	set status(status: string) {
 		this._status = status;
-	} 
+	}
 
 	get status(): string {
 		return this._status;
