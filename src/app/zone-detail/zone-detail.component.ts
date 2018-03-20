@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 // import { ZoneObject } from '../data-modeling/zones/zone-object';
 
 import { ZoneObject } from '../data-modeling/zones-api/zone-object';
+import { ZoneCommandObject } from '../data-modeling/zones-api/zone-command-object';
+
+
 
 @Component({
   selector: 'app-zone-detail',
@@ -15,10 +18,11 @@ export class ZoneDetailComponent implements OnInit {
 
   public showList = true;
   public newZone = false;
+  public newCmd = false;
 
   zoneObject: ZoneObject;
+  commandObject: ZoneCommandObject;
 
-  // @Input() zoneobject: ZoneObject;
   @Input() zone: ZoneObject;
 
   constructor(private route: ActivatedRoute) {
@@ -30,6 +34,11 @@ export class ZoneDetailComponent implements OnInit {
 
   onSelect(zoneObject: ZoneObject): void {
     this.zoneObject = zoneObject;
+    this.showList = false;
+  }
+
+  onSelectCommand(zoneCommandObject: ZoneCommandObject): void {
+    this.commandObject = zoneCommandObject;
     this.showList = false;
   }
 

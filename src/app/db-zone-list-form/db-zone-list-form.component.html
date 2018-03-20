@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  <form [formGroup]="zoneListForm" novalidate="">
+    <div class="form-group">
+      <input type="hidden" class="form-control" formControlName="id">
+    </div>
+
+    <div class="form-group">
+      <label for="start">Zone Name</label>
+      <input id="start" type="text" class="form-control" formControlName="start">
+    </div>
+
+    <div class="form-group">
+      <label for="end">Top Room Number</label>
+      <input id="end" type="text" class="form-control" formControlName="end">
+    </div>
+
+    <div class="form-group">
+      <label for="path">Life Span</label>
+      <input id="path" type="text" class="form-control" formControlName="path">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Life Span</label>
+      <input id="name" type="text" class="form-control" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="status">Life Span</label>
+      <input type="text" class="form-control" formControlName="status">
+    </div>
+
+    <div class="form-group">
+      <label for="status">Reset Mode</label>
+      <select id="status" formControlName="resetMode">
+        <option value="">--</option>
+        <option *ngFor="let st of status" [value]="st">{{st}}</option>
+      </select>
+    </div>
+
+  </form>
+</div>

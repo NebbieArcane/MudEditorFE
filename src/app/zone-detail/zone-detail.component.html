@@ -34,8 +34,8 @@
 						<td>{{ command.cap }}</td>
 						<td>{{ command.room }}</td>
 						<td>{{ command.reserved }}</td>
-						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
-						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -58,8 +58,8 @@
 						<td>{{ command.vnum }}</td>
 						<td>{{ command.slotDesc }}</td>
 						<td>{{ command.cap }}</td>
-						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
-						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -80,8 +80,8 @@
 						<td>{{ command.ifFlag }}</td>
 						<td>{{ command.vnum }}</td>
 						<td>{{ command.cap }}</td>
-						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
-						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -106,8 +106,8 @@
 						<td>{{ command.cap }}</td>
 						<td>{{ command.room }}</td>
 						<td>{{ command.reserved }}</td>
-						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
-						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -128,8 +128,8 @@
 						<td>{{ command.ifFlag }}</td>
 						<td>{{ command.room }}</td>
 						<td>{{ command.vnum }}</td>
-						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
-						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -153,8 +153,8 @@
 						<td>{{ command.vnum }}</td>
 						<td>{{ command.exit }}</td>
 						<td>{{ command.state }}</td>
-						<td><span class="oi oi-person" title="brush" aria-hidden="true"></span></td>
-						<td><span class="oi oi-person" title="x" aria-hidden="true"></span></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -167,6 +167,14 @@
 	<app-zone-form [zoneObject]="zoneObject"></app-zone-form>
 </div>
 
+<div *ngIf="commandObject">
+	<app-zone-command-form [commandObject]="commandObject"></app-zone-command-form>
+</div>
+
 <div *ngIf="newZone">
 	<app-zone-form></app-zone-form>
 </div>
+<!-- 
+<div *ngIf="newCmd">
+	<app-zone-form></app-zone-form>
+</div> -->

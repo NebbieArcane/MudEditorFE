@@ -8,8 +8,8 @@ export class ZoneCommandObject {
 	private _slot: number;
 	private _slotDesc: string;
 	private _into: number;
-	private _exit: number;
-	private _state: number;
+	private _exit: string;
+	private _state: string;
 
 	constructor() { }
 
@@ -70,19 +70,19 @@ export class ZoneCommandObject {
 		return this._into;
 	}
 
-	set exit(exit: number) {
+	set exit(exit: string) {
 		this._exit = exit;
 	}
 
-	get exit(): number {
+	get exit(): string {
 		return this.exit;
 	}
 
-	set state(state: number) {
+	set state(state: string) {
 		this._state = state;
 	}
 
-	get state(): number {
+	get state(): string {
 		return this._state;
 	}
 	

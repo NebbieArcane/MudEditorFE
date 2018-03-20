@@ -20,6 +20,8 @@ import { ZoneFormComponent } from './zone-form/zone-form.component';
 import { HomeComponent } from './home/home.component';
 import { ZoneRestClientService } from './zone-rest-client.service';
 import { ZoneCommandFormComponent } from './zone-command-form/zone-command-form.component';
+import { DbZoneRestServiceService } from './db-zone-rest-service.service';
+import { DbZoneListFormComponent } from './db-zone-list-form/db-zone-list-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ZoneCommandFormComponent } from './zone-command-form/zone-command-form.
     ZoneFormComponent,
     HomeComponent,
     ZoneCommandFormComponent,
+    DbZoneListFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { ZoneCommandFormComponent } from './zone-command-form/zone-command-form.
     HttpModule,
     HttpClientModule
   ],
-  providers: [ZoneService, MessageService, ZoneRestClientService],
+  providers: [ZoneService, MessageService, ZoneRestClientService, DbZoneRestServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,57 @@
-<p>
-  zone-command-form works!
-</p>
+<div class="container">
+    <h1>{{title}}</h1>
+    <form [formGroup]="commandForm" novalidate="">
+      <div class="form-group">
+        <label for="vNum">Virtual Number</label>
+        <input type="text" class="form-control" formControlName="vNum">
+      </div>
+
+      <div class="form-group">
+        <label for="ifFlag">If Flag</label>
+        <select id="ifFlag" formControlName="ifFlag">
+        	<option value="">--</option>
+        	<option *ngFor="let ifF of ifFlag" [value]="ifF">{{ifF}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cap">Cap</label>
+        <input type="text" class="form-control" formControlName="cap">
+      </div>
+      
+      <div class="form-group">
+        <label for="room">Room</label>
+        <input type="text" class="form-control" formControlName="room">
+      </div>
+
+      <div class="form-group">
+        <label for="reserved">Reserved</label>
+        <input type="text" class="form-control" formControlName="reserved" [disabled]="all">
+      </div>
+
+     <div class="form-group">
+        <label for="slot">Reset Mode</label>
+        <select id="slot" formControlName="slot">
+        	<option value="">--</option>
+        	<option *ngFor="let slot of equipmentPosition" [value]="slot">{{slot}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="exit">Reset Mode</label>
+        <select id="exit" formControlName="exit">
+        	<option value="">--</option>
+        	<option *ngFor="let ex of exit" [value]="ex">{{ex}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="state">Reset Mode</label>
+        <select id="state" formControlName="state">
+        	<option value="">--</option>
+        	<option *ngFor="let st of state" [value]="st">{{st}}</option>
+        </select>
+    </div>
+    </form>
+</div>
+

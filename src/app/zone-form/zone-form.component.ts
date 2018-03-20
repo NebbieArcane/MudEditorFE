@@ -1,9 +1,8 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 
-import { ZoneObject } from '../data-modeling/zones-api/zone-object';
+import {ZoneObject} from '../data-modeling/zones-api/zone-object';
 
 @Component({
 	selector: 'app-zone-form',
@@ -14,7 +13,7 @@ export class ZoneFormComponent implements OnInit, OnChanges {
 
 	public title = 'ModZone';
 
-	resetMode = ['Never', 'IfEmpty', 'Always'];	
+	resetMode = ['Never', 'IfEmpty', 'Always'];
 
 	@Input() zoneObject: ZoneObject;
 
@@ -60,9 +59,8 @@ export class ZoneFormComponent implements OnInit, OnChanges {
 		}
 	}
 
-	ngOnInit() {
-		console.log('init');
-		this.createForm();
-	}
+  ngOnInit() {
+    this.createForm();
+  }
 
 }
