@@ -13,13 +13,12 @@
       <h2>Working zones</h2>
       <ul class="heroes">
         <li (click)="addDbZone(dbZoneFormObject)" [class.selected]="selectedZones">ADD ZONE</li>
-        <li *ngFor="let zoneDb of dbzonesobject" (click)="onSelect(zoneDb)"
+        <li *ngFor="let zoneDb of dbzoneobject" (click)="onSelectDb(zoneDb)"
             [class.selected]="zoneDb === selectedZones">
           {{zoneDb.name}}
         </li>
       </ul>
     </div>
-
 
     <div class="col-lg-8" #mylist>
       <div *ngIf="newZone" class="col-lg">

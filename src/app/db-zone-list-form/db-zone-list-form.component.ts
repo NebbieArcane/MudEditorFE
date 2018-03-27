@@ -28,9 +28,10 @@ export class DbZoneListFormComponent implements OnInit {
   createForm() {
     console.log(JSON.stringify(this.dbZoneFormObject));
     if (this.dbZoneFormObject) {
+      // This is probably an update
 
     } else {
-      console.log('caccone');
+      // This is a new zone to be saved
       this.zoneListForm = this.fb.group({
         id: null,
         start: null,
@@ -43,7 +44,8 @@ export class DbZoneListFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.dbZoneService.saveZone(this.zoneListForm.value);
+    console.log(this.zoneListForm.value);
+    this.dbZoneService.saveZone(this.zoneListForm.value).subscribe();
   }
 
   ngOnInit() {

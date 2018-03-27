@@ -41,6 +41,11 @@ export class ZonesComponent implements OnInit {
     this.getZone(this.path);
   }
 
+  onSelectDb(dbZoneFormObject: ZoneListObject): void {
+    this.getDbZone(dbZoneFormObject.id);
+  }
+
+
   addDbZone(): void {
     this.newZone = true;
   }
@@ -55,7 +60,11 @@ export class ZonesComponent implements OnInit {
   }
 
   getDbZones(): void {
-    this.dbZoneService.getZones().subscribe(dbzonesobject => this.dbzoneobject = dbzonesobject);
+    this.dbZoneService.getZones().subscribe(dbzoneobject => this.dbzoneobject = dbzoneobject);
+  }
+
+  getDbZone(id: number): void {
+    this.dbZoneService.getZone(id).subscribe(zoneDb => this.zoneDb = this.zoneDb);
   }
 
 }

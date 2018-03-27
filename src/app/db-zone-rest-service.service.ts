@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 
 import {environment} from '../environments/environment';
@@ -11,24 +11,29 @@ import {ZoneListObject} from "./data-modeling/zone-db/zone-list-object";
 @Injectable()
 export class DbZoneRestServiceService {
 
-  private zonesUrl: string = environment.zoneDbRestApi;
-  private secret: string = environment.auth;
-
-  private finalUrl: string = this.zonesUrl + '?' + this.secret;
+  private finalUrl: string = environment.zoneDbRestApi;
 
   constructor(private http: HttpClient,
               private messageService: MessageService) {
   }
 
   getZones(): Observable<ZoneListObject[]> {
+    console.log(this.finalUrl);
     this.messageService.add('Zone service: fetched zone');
+    //return this.http.get<ZoneListObject[]>(this.finalUrl);
     return this.http.get<ZoneListObject[]>(this.finalUrl);
   }
 
-  saveZone(zoneList: ZoneListObject): Observable<any> {
-    let response = this.http.post(this.finalUrl, zoneList);
-    console.log(JSON.stringify(response));
-    return response;
+  getZone(id: number): Observable<ZoneListObject> {
+    console.log(this.finalUrl);
+    this.messageService.add('Zone service: fetched zone');
+    return this.http.get<ZoneListObject>(this.finalUrl + '/' + id + '/');
+  }
+
+  saveZone(zoneList: ZoneListObject): Observable<ZoneListObject> {
+    console.log(this.finalUrl)
+    this.messageService.add('Zone service: Request to store new zone');
+    return this.http.post<ZoneListObject>(this.finalUrl, zoneList);
   }
 
 }
