@@ -19,18 +19,12 @@
         </li>
       </ul>
     </div>
-
     <div class="col-lg-8" #mylist>
-      <div *ngIf="newZone" class="col-lg">
+      <div *ngIf="_newZone" class="col-lg">
         <app-db-zone-list-form></app-db-zone-list-form>
       </div>
       <app-zone-detail [zone]="zone"></app-zone-detail>
       <app-zone-detail [zone]="zoneDb"></app-zone-detail>
-
     </div>
-
-
   </div>
-
-
 </div>

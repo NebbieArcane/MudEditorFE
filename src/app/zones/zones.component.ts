@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ZoneRestClientService} from '../zone-rest-client.service';
 import {DbZoneRestServiceService} from '../db-zone-rest-service.service';
 
@@ -12,22 +12,32 @@ import {ZoneListObject} from "../data-modeling/zone-db/zone-list-object";
   templateUrl: './zones.component.html',
   styleUrls: ['./zones.component.css']
 })
-export class ZonesComponent implements OnInit {
+export class ZonesComponent implements OnInit, OnChanges {
 
   zoneobject: ZonesObject[];
   dbzoneobject: ZoneListObject[];
-
   dbZoneFormObject: ZoneListObject;
-
   zone: ZoneObject;
   zoneDb: ZoneListObject;
-
   path: string;
-
-  newZone = false;
 
   constructor(private zoneService: ZoneRestClientService,
               private dbZoneService: DbZoneRestServiceService) {
+
+  }
+
+  _newZone = false;
+
+  set newZone(newZone: boolean) {
+    this._newZone = newZone;
+  }
+
+  //@Input() dbzoneobject: ZoneListObject;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['dbzoneobject']) {
+      console.log('eccheccazzo!!!!');
+    }
   }
 
   ngOnInit() {
@@ -47,7 +57,7 @@ export class ZonesComponent implements OnInit {
 
 
   addDbZone(): void {
-    this.newZone = true;
+    this._newZone = true;
   }
 
 
@@ -60,11 +70,11 @@ export class ZonesComponent implements OnInit {
   }
 
   getDbZones(): void {
-    this.dbZoneService.getZones().subscribe(dbzoneobject => this.dbzoneobject = dbzoneobject);
+    this.dbZoneService.getListZones().subscribe(dbzoneobject => this.dbzoneobject = dbzoneobject);
   }
 
   getDbZone(id: number): void {
-    this.dbZoneService.getZone(id).subscribe(zoneDb => this.zoneDb = this.zoneDb);
+    this.dbZoneService.getListZone(id).subscribe(zoneDb => this.zoneDb = zoneDb);
   }
 
 }

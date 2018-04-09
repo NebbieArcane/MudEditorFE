@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 
 import {environment} from '../environments/environment';
@@ -17,23 +17,23 @@ export class DbZoneRestServiceService {
               private messageService: MessageService) {
   }
 
-  getZones(): Observable<ZoneListObject[]> {
+  getListZones(): Observable<ZoneListObject[]> {
     console.log(this.finalUrl);
     this.messageService.add('Zone service: fetched zone');
-    //return this.http.get<ZoneListObject[]>(this.finalUrl);
     return this.http.get<ZoneListObject[]>(this.finalUrl);
   }
 
-  getZone(id: number): Observable<ZoneListObject> {
+  getListZone(id: number): Observable<ZoneListObject> {
     console.log(this.finalUrl);
     this.messageService.add('Zone service: fetched zone');
-    return this.http.get<ZoneListObject>(this.finalUrl + '/' + id + '/');
+    return this.http.get<ZoneListObject>(this.finalUrl + '/' + id);
   }
 
-  saveZone(zoneList: ZoneListObject): Observable<ZoneListObject> {
+  saveListZone(zoneList: ZoneListObject): Observable<ZoneListObject> {
     console.log(this.finalUrl)
     this.messageService.add('Zone service: Request to store new zone');
     return this.http.post<ZoneListObject>(this.finalUrl, zoneList);
   }
+
 
 }

@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {ZoneListObject} from '../data-modeling/zone-db/zone-list-object';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {DbZoneRestServiceService} from "../db-zone-rest-service.service";
+import {ZonesComponent} from "../zones/zones.component";
 
 @Component({
   selector: 'app-db-zone-list-form',
@@ -22,11 +23,13 @@ export class DbZoneListFormComponent implements OnInit {
   ];
 
   constructor(private fb: FormBuilder,
-              private dbZoneService: DbZoneRestServiceService) {
+              private dbZoneService: DbZoneRestServiceService,
+              private zoneComponent: ZonesComponent
+  ) {
+
   }
 
   createForm() {
-    console.log(JSON.stringify(this.dbZoneFormObject));
     if (this.dbZoneFormObject) {
       // This is probably an update
 
@@ -45,7 +48,15 @@ export class DbZoneListFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.zoneListForm.value);
-    this.dbZoneService.saveZone(this.zoneListForm.value).subscribe();
+    this.dbZoneService.saveListZone(this.zoneListForm.value).subscribe(
+      //() => this.zoneComponent.getDbZones()
+      () => this.postSubmit()
+    );
+  }
+
+  postSubmit() {
+    this.zoneComponent.getDbZones();
+    this.zoneComponent.newZone = false;
   }
 
   ngOnInit() {
