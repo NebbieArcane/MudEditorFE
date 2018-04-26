@@ -1,180 +1,182 @@
 <!-- zone description -->
 <div *ngIf="zone">
-	<div *ngIf="showList">
-		<div id="idlista">
-			<div class="row col-lg-12">
-				<h2>{{ zone[0].name | uppercase }} Details</h2>
-			</div>
-			<div class="col-lg" id="vnum">vnum: {{zone[0].vnum}}</div>
-			<div class="col-lg">zoneName: {{zone[0].name}}</div>
-			<div class="col-lg">topRoomNumber: {{zone[0].end}}</div>
-			<div class="col-lg">lifeSpan: {{zone[0].lifespan}}</div>
-			<div class="col-lg">resetMode: {{zone[0].resetmode}}</div>
-			<button type="button" class="btn btn-light" (click)="onSelect(zone)">EditZone</button>
-		</div>
-		<div *ngFor="let command of zone[0].actions" [ngSwitch]="command.code" class="col-lg-12">
-			<table class="table table-striped" *ngSwitchCase="'M'">
-				<thead>
-					<tr>
-						<th scope="col">Command</th>
-						<th scope="col">if-flag</th>
-						<th scope="col">V-Num</th>
-						<th scope="col">cap</th>
-						<th scope="col">room</th>
-						<th scope="col">reserved</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">{{ command.code }}</th>
-						<td>{{ command.ifFlag }}</td>
-						<td>{{ command.vnum }}</td>
-						<td>{{ command.cap }}</td>
-						<td>{{ command.room }}</td>
-						<td>{{ command.reserved }}</td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="table table-striped" *ngSwitchCase="'E'">
-				<thead>
-					<tr>
-						<th scope="col">Command</th>
-						<th scope="col">if-flag</th>
-						<th scope="col">V-Num</th>
-						<th scope="col">slot</th>
-						<th scope="col">cap</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">{{ command.code }}</th>
-						<td>{{ command.ifFlag }}</td>
-						<td>{{ command.vnum }}</td>
-						<td>{{ command.slotDesc }}</td>
-						<td>{{ command.cap }}</td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="table table-striped" *ngSwitchCase="'G'">
-				<thead>
-					<tr>
-						<th scope="col">Command</th>
-						<th scope="col">if-flag</th>
-						<th scope="col">V-Num</th>
-						<th scope="col">cap</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">{{ command.code }}</th>
-						<td>{{ command.ifFlag }}</td>
-						<td>{{ command.vnum }}</td>
-						<td>{{ command.cap }}</td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="table table-striped" *ngSwitchCase="'O'">
-				<thead>
-					<tr>
-						<th scope="col">Command</th>
-						<th scope="col">if-flag</th>
-						<th scope="col">V-Num</th>
-						<th scope="col">cap</th>
-						<th scope="col">room</th>
-						<th scope="col">reserved</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">{{ command.code }}</th>
-						<td>{{ command.ifFlag }}</td>
-						<td>{{ command.vnum }}</td>
-						<td>{{ command.cap }}</td>
-						<td>{{ command.room }}</td>
-						<td>{{ command.reserved }}</td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="table table-striped" *ngSwitchCase="'R'">
-				<thead>
-					<tr>
-						<th scope="col">Command</th>
-						<th scope="col">if-flag</th>
-						<th scope="col">room</th>
-						<th scope="col">V-Num</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">{{ command.code }}</th>
-						<td>{{ command.ifFlag }}</td>
-						<td>{{ command.room }}</td>
-						<td>{{ command.vnum }}</td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="table table-striped" *ngSwitchCase="'D'">
-				<thead>
-					<tr>
-						<th scope="col">Command</th>
-						<th scope="col">if-flag</th>
-						<th scope="col">room</th>
-						<th scope="col">Exit</th>
-						<th scope="col">state</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">{{ command.code }}</th>
-						<td>{{ command.ifFlag }}</td>
-						<td>{{ command.room }}</td>
-						<td>{{ command.vnum }}</td>
-						<td>{{ command.exit }}</td>
-						<td>{{ command.state }}</td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
-						<td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+  <div *ngIf="showList">
+    <div id="idlista">
+      <div class="row col-lg-12">
+        <h2>{{ zone[0].name | uppercase }} Details</h2>
+      </div>
+      <div class="col-lg" id="vnum">vnum: {{zone[0].vnum}}</div>
+      <div class="col-lg">zoneName: {{zone[0].name}}</div>
+      <div class="col-lg">topRoomNumber: {{zone[0].end}}</div>
+      <div class="col-lg">lifeSpan: {{zone[0].lifespan}}</div>
+      <div class="col-lg">resetMode: {{zone[0].resetmode}}</div>
+      <button type="button" class="btn btn-light" (click)="onSelect(zone)">EditZone</button>
+    </div>
+    <!--
+    <div *ngFor="let command of zone[0].actions" [ngSwitch]="command.code" class="col-lg-12">
+            <table class="table table-striped" *ngSwitchCase="'M'">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">if-flag</th>
+                        <th scope="col">V-Num</th>
+                        <th scope="col">cap</th>
+                        <th scope="col">room</th>
+                        <th scope="col">reserved</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ command.code }}</th>
+                        <td>{{ command.ifFlag }}</td>
+                        <td>{{ command.vnum }}</td>
+                        <td>{{ command.cap }}</td>
+                        <td>{{ command.room }}</td>
+                        <td>{{ command.reserved }}</td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped" *ngSwitchCase="'E'">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">if-flag</th>
+                        <th scope="col">V-Num</th>
+                        <th scope="col">slot</th>
+                        <th scope="col">cap</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ command.code }}</th>
+                        <td>{{ command.ifFlag }}</td>
+                        <td>{{ command.vnum }}</td>
+                        <td>{{ command.slotDesc }}</td>
+                        <td>{{ command.cap }}</td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped" *ngSwitchCase="'G'">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">if-flag</th>
+                        <th scope="col">V-Num</th>
+                        <th scope="col">cap</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ command.code }}</th>
+                        <td>{{ command.ifFlag }}</td>
+                        <td>{{ command.vnum }}</td>
+                        <td>{{ command.cap }}</td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped" *ngSwitchCase="'O'">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">if-flag</th>
+                        <th scope="col">V-Num</th>
+                        <th scope="col">cap</th>
+                        <th scope="col">room</th>
+                        <th scope="col">reserved</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ command.code }}</th>
+                        <td>{{ command.ifFlag }}</td>
+                        <td>{{ command.vnum }}</td>
+                        <td>{{ command.cap }}</td>
+                        <td>{{ command.room }}</td>
+                        <td>{{ command.reserved }}</td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped" *ngSwitchCase="'R'">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">if-flag</th>
+                        <th scope="col">room</th>
+                        <th scope="col">V-Num</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ command.code }}</th>
+                        <td>{{ command.ifFlag }}</td>
+                        <td>{{ command.room }}</td>
+                        <td>{{ command.vnum }}</td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped" *ngSwitchCase="'D'">
+                <thead>
+                    <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">if-flag</th>
+                        <th scope="col">room</th>
+                        <th scope="col">Exit</th>
+                        <th scope="col">state</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ command.code }}</th>
+                        <td>{{ command.ifFlag }}</td>
+                        <td>{{ command.room }}</td>
+                        <td>{{ command.vnum }}</td>
+                        <td>{{ command.exit }}</td>
+                        <td>{{ command.state }}</td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectCommand(command)"><span class="oi oi-brush" title="brush" aria-hidden="true"></span></button></td>
+                        <td><button class="btn btn-light" type="button" (click)="onSelectDeleteCommand(command)"><span class="oi oi-trash" title="x" aria-hidden="true"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        -->
+  </div>
 </div>
 
 <!-- edit form -->
 <div *ngIf="zoneObject">
-	<app-zone-form [zoneObject]="zoneObject"></app-zone-form>
+  <app-zone-form [zoneObject]="zoneObject"></app-zone-form>
 </div>
 
 <div *ngIf="commandObject">
-	<app-zone-command-form [commandObject]="commandObject"></app-zone-command-form>
+  <app-zone-command-form [commandObject]="commandObject"></app-zone-command-form>
 </div>
 
 <div *ngIf="newZone">
-	<app-zone-form></app-zone-form>
+  <app-zone-form></app-zone-form>
 </div>
-<!-- 
+<!--
 <div *ngIf="newCmd">
 	<app-zone-form></app-zone-form>
 </div> -->
