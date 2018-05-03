@@ -48,7 +48,7 @@ export class DbZoneListFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.zoneListForm.value);
-    this.dbZoneService.saveListZone(this.zoneListForm.value).subscribe(
+    return this.dbZoneService.saveListZone(this.zoneListForm.value).subscribe(
       //() => this.zoneComponent.getDbZones()
       () => this.postSubmit()
     );

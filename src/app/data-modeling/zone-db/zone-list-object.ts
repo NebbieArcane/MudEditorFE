@@ -1,65 +1,66 @@
 export class ZoneListObject {
 
-  private _id: number;
-  private _userId: number;
-  private _start: number;
-  private _end: number;
-  private _path: string;
-  private _name: string;
-  private _status: string;
+  private id: number;
+  private userId: number;
+  private start: number;
+  private end: number;
+  private path: string;
+  private name: string;
+  private status: string;
 
-  constructor() {
+  get _id(): number {
+    return this.id;
   }
 
-  get id(): number {
-    return this._id;
+  set _id(id: number) {
+    this.id = id;
   }
 
-  set userId(userId: number) {
-    this._userId = userId;
-  }
-
-  get userId(): number {
+  get _userId(): number {
     return this.userId;
   }
 
-  set start(start: number) {
-    this._start = start;
+  set _userId(userId: number) {
+    this.userId = userId;
   }
 
-  get start(): number {
-    return this._start;
+  get _start(): number {
+    return this.start;
   }
 
-  set end(end: number) {
-    this._end = end;
+  set _start(start: number) {
+    this.start = start;
   }
 
-  get end(): number {
-    return this._end;
+  get _end(): number {
+    return this.end;
   }
 
-  set path(path: string) {
-    this._path = path;
+  set _end(end: number) {
+    this.end = end;
   }
 
-  get path(): string {
-    return this._path;
+  get _path(): string {
+    return this.path;
   }
 
-  set name(name: string) {
-    this._name = name;
+  set _path(path: string) {
+    this.path = path;
   }
 
-  get name(): string {
-    return this._name;
+  get _name(): string {
+    return this.name;
   }
 
-  set status(status: string) {
-    this._status = status;
+  set _name(name: string) {
+    this.name = name;
   }
 
-  get status(): string {
-    return this._status;
+  get _status(): string {
+    return this.status;
+  }
+
+  set _status(status: string) {
+    this.status = status;
   }
 }

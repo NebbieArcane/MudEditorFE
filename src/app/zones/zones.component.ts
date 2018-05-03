@@ -6,6 +6,7 @@ import {DbZoneRestServiceService} from '../db-zone-rest-service.service';
 import {ZonesObject} from '../data-modeling/zones-api/zones-object';
 import {ZoneObject} from '../data-modeling/zones-api/zone-object';
 import {ZoneListObject} from "../data-modeling/zone-db/zone-list-object";
+import {MessageService} from "../message.service";
 
 @Component({
   selector: 'app-zones',
@@ -20,9 +21,13 @@ export class ZonesComponent implements OnInit, OnChanges {
   zone: ZoneObject;
   zoneDb: ZoneListObject;
   path: string;
+  msg: string;
+  p: string;
 
   constructor(private zoneService: ZoneRestClientService,
-              private dbZoneService: DbZoneRestServiceService) {
+              private dbZoneService: DbZoneRestServiceService,
+              private message: MessageService
+  ) {
 
   }
 
@@ -52,7 +57,7 @@ export class ZonesComponent implements OnInit, OnChanges {
   }
 
   onSelectDb(dbZoneFormObject: ZoneListObject): void {
-    this.getDbZone(dbZoneFormObject.id);
+    this.getDbZone(dbZoneFormObject._id);
   }
 
 
@@ -63,18 +68,23 @@ export class ZonesComponent implements OnInit, OnChanges {
 
   getZones(): void {
     this.zoneService.getZones().subscribe(zoneobject => this.zoneobject = zoneobject);
+    this.message.clear();
   }
 
   getZone(path: string): void {
     this.zoneService.getZone(path).subscribe(zone => this.zone = zone);
+    this.message.clear()
+
   }
 
   getDbZones(): void {
     this.dbZoneService.getListZones().subscribe(dbzoneobject => this.dbzoneobject = dbzoneobject);
+    this.message.clear();
   }
 
   getDbZone(id: number): void {
     this.dbZoneService.getListZone(id).subscribe(zoneDb => this.zoneDb = zoneDb);
+    this.message.clear()
   }
 
 }

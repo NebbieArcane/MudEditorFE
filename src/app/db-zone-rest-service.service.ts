@@ -6,6 +6,7 @@ import {environment} from '../environments/environment';
 
 import {MessageService} from './message.service';
 import {ZoneListObject} from "./data-modeling/zone-db/zone-list-object";
+import {NewZoneListResponse} from "./data-modeling/zone-db/new-zone-list-response";
 
 
 @Injectable()
@@ -29,10 +30,11 @@ export class DbZoneRestServiceService {
     return this.http.get<ZoneListObject>(this.finalUrl + '/' + id);
   }
 
-  saveListZone(zoneList: ZoneListObject): Observable<ZoneListObject> {
+  saveListZone(zoneList: ZoneListObject): Observable<NewZoneListResponse> {
     console.log(this.finalUrl)
     this.messageService.add('Zone service: Request to store new zone');
-    return this.http.post<ZoneListObject>(this.finalUrl, zoneList);
+    return this.http.post<NewZoneListResponse>(this.finalUrl, zoneList);
+
   }
 
 

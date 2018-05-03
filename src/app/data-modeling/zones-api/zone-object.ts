@@ -1,63 +1,78 @@
-import { ZoneCommandObject } from './zone-command-object';
+import {ZoneCommandObject} from './zone-command-object';
 
 
 export class ZoneObject {
 
-	private _vnum: number;
-	private _name: string;
-	private _end: number;
-	private _lifespan: number;
-	private _resetmode: string;
-	private _actions: ZoneCommandObject[];
+  constructor() {
+  }
 
-	constructor() { }
+  private _vnum: number;
 
-	set vnum(vnum: number) {
-		this._vnum = vnum;
-	}
+  get vnum(): number {
+    return this._vnum;
+  }
 
-	get vnum(): number {
-		return this._vnum;
-	}
+  set vnum(vnum: number) {
+    this._vnum = vnum;
+  }
 
-	set name(name: string) {
-		this._name = name;
-	}
+  private _name: string;
 
-	get name(): string {
-		return this._name;
-	}
+  get name(): string {
+    return this._name;
+  }
 
-	set end(end: number) {
-		this._end = end;
-	}
+  set name(name: string) {
+    this._name = name;
+  }
 
-	get end(): number {
-		return this._end;
-	}
+  private _end: number;
 
-	set lifespan(lifespan: number) {
-		this._lifespan = lifespan;
-	}
+  get end(): number {
+    return this._end;
+  }
 
-	get lifespan(): number {
-		return this._lifespan;
-	}
+  set end(end: number) {
+    this._end = end;
+  }
 
-	set resetmode(resetmode: string) {
-		this._resetmode = resetmode;
-	}
+  private _lifespan: number;
 
-	get resetmode(): string {
-		return this._resetmode;
-	}
+  get lifespan(): number {
+    return this._lifespan;
+  }
 
-	set actions(actions: ZoneCommandObject[]) {
-		this._actions = actions;
-	}
+  set lifespan(lifespan: number) {
+    this._lifespan = lifespan;
+  }
 
-	get actions(): ZoneCommandObject[] {
-		return this._actions;
-	}
+  private _resetmode: string;
 
+  get resetmode(): string {
+    return this._resetmode;
+  }
+
+  set resetmode(resetmode: string) {
+    this._resetmode = resetmode;
+  }
+
+  private _actions: ZoneCommandObject[];
+
+  get actions(): ZoneCommandObject[] {
+    return this._actions;
+  }
+
+  set actions(actions: ZoneCommandObject[]) {
+    this._actions = actions;
+  }
+
+  private _path: string;
+
+  get path(): string {
+    return this._path;
+  }
+
+  set path(path: string) {
+    this._path = path;
+  }
 }
