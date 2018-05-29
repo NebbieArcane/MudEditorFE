@@ -1,41 +1,45 @@
 export class ZonesObject {
 
-	private _start: number;
-	private _end: number;
-	private _path: string;
-	private _name: string;
+  constructor() {
+  }
 
-	constructor() { }
+  private _start: number;
 
-	set start(start: number) {
-		this._start = start;
-	}
+  get start(): number {
+    return this._start;
+  }
 
-	get start(): number {
-		return this._start;
-	}
+  set start(start: number) {
+    this._start = start;
+  }
 
-	set end(end: number) {
-		this._end = end;
-	}
+  private _end: number;
 
-	get end(): number {
-		return this._end;
-	}
+  get end(): number {
+    return this._end;
+  }
 
-	set path(path: string) {
-		this._path = path;
-	}
+  set end(end: number) {
+    this._end = end;
+  }
 
-	get path(): string {
-		return this.path;
-	}
+  private _path: string;
 
-	set name(name: string) {
-		this._name = name;
-	}
+  get path(): string {
+    return this._path;
+  }
 
-	get name(): string {
-		return this._name;
-	}
+  set path(path: string) {
+    this._path = path;
+  }
+
+  private _name: string;
+
+  get name(): string {
+    return this._name;
+  }
+
+  set name(name: string) {
+    this._name = name;
+  }
 }

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="/ ">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="/navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -9,62 +10,67 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      
+
       <!-- Zones menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/" id="zones" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           Zones
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="zones">
           <a class="dropdown-item" routerLink="/zones">List Zones</a>
           <a class="dropdown-item" routerLink="/zones/new">Add Zone</a>
         </div>
       </li>
-      
+
       <!-- Rooms menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/" id="rooms" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           Rooms
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="rooms">
           <a class="dropdown-item" routerLink="/rooms">List Rooms</a>
           <a class="dropdown-item" routerLink="/rooms/add">Add Room</a>
         </div>
       </li>
-      
+
       <!-- Mobs menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/" id="mobs" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           Mobs
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="mobs">
           <a class="dropdown-item" routerLink="/mobs">List Mobs</a>
           <a class="dropdown-item" routerLink="/mobs/add">Add Mob</a>
         </div>
       </li>
-      
+
       <!-- Mobs menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/" id="objects" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           Objects
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="objects">
           <a class="dropdown-item" routerLink="/objects">List Objects</a>
           <a class="dropdown-item" routerLink="/objects/add">Add Object</a>
         </div>
       </li>
-      
+
       <!-- Mobs menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/" id="shops" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           Shops
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="shops">
           <a class="dropdown-item" routerLink="/shops">List Shops</a>
           <a class="dropdown-item" routerLink="/shops/add">Add Shop</a>
         </div>
       </li>
-      
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

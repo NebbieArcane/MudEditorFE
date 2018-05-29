@@ -1,10 +1,10 @@
 export class ZoneListObject {
 
+  public path: string;
   private id: number;
   private userId: number;
   private start: number;
   private end: number;
-  private path: string;
   private name: string;
   private status: string;
 
